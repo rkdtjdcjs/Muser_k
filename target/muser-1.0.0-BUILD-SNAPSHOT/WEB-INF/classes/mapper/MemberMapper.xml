@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.muser.mybatis.mapper.MemberMapper">
+
+	<select id="duplicateCheck" resultType="Mu_Member" parameterType="String">
+		SELECT MUID FROM MU_MEMBER WHERE MUID=#{muId}
+	</select>
+	
+	<select id="MemberLogin"  resultType="String" parameterType="Mu_Member">
+	   SELECT MUID, MUPW FROM MU_MEMBER WHERE MUID=#{muId} AND MUPW=#{muPw}
+	</select>
+</mapper>
